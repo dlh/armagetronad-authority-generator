@@ -59,21 +59,23 @@
     </div>
 
     <div>
-        <button
-            class="action"
-            title="Toggle the display of the remove buttons"
-            v-on="click: shouldDisplayAllRemoveButtons = !shouldDisplayAllRemoveButtons"
-        >
-            Toggle <i class="fa fa-trash-o"></i> Buttons
-        </button>
-        <button
-            class="action debug-button"
-            title="Toggle the display of the debug buttons"
-            v-on="click: shouldDisplayDebugButtons = !shouldDisplayDebugButtons"
-        >
-            <i class="fa fa-wrench"></i>
-        </button>
+        <p>
+            <button
+                class="action"
+                title="Toggle the display of the remove buttons"
+                v-on="click: shouldDisplayAllRemoveButtons = !shouldDisplayAllRemoveButtons"
+            >
+                Toggle <i class="fa fa-trash-o"></i> Buttons
+            </button>
+            <button
+                class="action debug-button"
+                title="Toggle the display of the debug buttons"
+                v-on="click: shouldDisplayDebugButtons = !shouldDisplayDebugButtons"
+            >
+                <i class="fa fa-wrench"></i>
+            </button>
 
-        <button class="right action" v-on="click: moveToNextStep">Scroll to Publish</button>
+            <button class="right action" v-on="click: moveToNextStep">Scroll to Publish</button>
+        </p>
     </div>
 </section>
