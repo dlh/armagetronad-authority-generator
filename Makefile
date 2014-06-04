@@ -8,7 +8,7 @@ BROWSERIFY_ARGS  = -o ${BUNDLED_JS_FILE} --transform partialify lib/js/main.js
 
 MANIFEST = index.html \
            LICENSE.txt \
-		   README.txt \
+		   README.md \
 		   lib/php/armaauth.php \
 		   ${BUNDLED_JS_FILE} \
 		   ${BUNDLED_CSS_FILE} \
