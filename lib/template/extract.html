@@ -1,0 +1,50 @@
+<!--
+Copyright (c) 2014, DLH
+See LICENSE.txt for license info.
+-->
+<section>
+    <div class="fill">
+        <textarea
+            placeholder="Team Name: Captain (example@forums), …"
+            v-model="text"
+        ></textarea>
+    </div>
+
+    <div>
+        <p>
+            <table>
+                <tr>
+                    <td></td>
+                    <td>Add as</td>
+                    <td>
+                        <span
+                            v-component="user-level"
+                            v-with="userLevel: userLevelGeneral">
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input
+                            id="should-add-z-man"
+                            type="checkbox"
+                            v-model="shouldAddZMan">
+                    </td>
+                    <td>
+                        <label for="should-add-z-man" class="pointer">Add Z-Man as</label>
+                    </td>
+                    <td>
+                        <span
+                            v-component="user-level"
+                            v-with="userLevel: userLevelZMan"
+                            v-attr="disabled: !shouldAddZMan">
+                        </span>
+                    </td>
+                </tr>
+            </table>
+            <button class="right action" v-on="click: extract">
+                Extract
+            </button>
+        </p>
+    </div>
+</section>

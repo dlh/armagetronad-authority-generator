@@ -1,0 +1,19 @@
+<!--
+Copyright (c) 2014, DLH
+See LICENSE.txt for license info.
+-->
+<nav>
+    <ul class="right">
+        <li v-repeat="sections">
+            <button
+                v-on="click: moveTo(el)"
+                v-class="selected: $index == sectionNumber"
+            >
+                <i
+                    class="fa fa-caret-right"
+                    v-show="$index == sectionNumber"
+                ></i>{{text}}
+            </button>
+        </li>
+    </ul>
+</nav>

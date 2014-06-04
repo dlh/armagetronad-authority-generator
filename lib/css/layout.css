@@ -1,0 +1,149 @@
+/*
+Copyright (c) 2014, DLH
+See LICENSE.txt for license info.
+*/
+
+/* ========== */
+/* = Layout = */
+/* ========== */
+
+html, body, body > div {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box;
+    padding-left: 20px;
+    padding-right: 20px;
+    background-color: #F9F8F5;
+    font-size: 0.9375em;
+}
+
+section {
+    height: 100%;
+    width: 100%;
+    display: table;
+
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box;
+    padding-bottom: 10px;
+}
+
+section > div {
+    display: table-row;
+}
+
+/* The main sections should be easy to distinguish */
+div > section {
+    border-bottom: 1px dotted #BBB;
+}
+
+div > section:last-child {
+    border: none;
+}
+
+/* Use to expand a div sub-section to take up the remaining space */
+.fill {
+    height: 100%;
+}
+
+.right {
+    float: right;
+}
+
+.left {
+    float: left;
+}
+
+/* ============== */
+/* = Navigation = */
+/* ============== */
+
+nav li {
+    display: inline-block;
+    padding: 0 4px 0 4px;
+}
+
+nav .selected {
+    text-decoration: underline;
+}
+
+nav button {
+    color: rgb(28, 148, 196);
+    font-weight: bold;
+    border: none;
+    background-color: transparent;
+}
+
+nav button:active {
+    color: rgb(253, 143, 0);
+}
+
+/* =========== */
+/* = General = */
+/* =========== */
+
+.action {
+    background-color: #FFF;
+    color: rgb(28, 148, 196);
+    font-weight: bold;
+    border: 1px solid rgb(204, 204, 204);
+    padding: 7px 19px 7px 19px;
+    border-radius: 4px;
+
+}
+
+.action:hover {
+    background-color: rgb(253, 245, 206);
+    color: rgb(235, 143, 0);
+    border-color: rgb(251, 216, 80);
+}
+
+.action:active {
+    background-color: #FFF;
+    color: rgb(253, 143, 0);
+}
+
+.plain-action {
+    border: none;
+    margin: 0;
+    padding: 0 10px 0 10px;
+    background-color: transparent;
+}
+
+.plain-action:active {
+    color: #2F2F2F;
+}
+
+td {
+    padding-top: 4px;
+}
+
+th {
+    padding-bottom: 4px;
+}
+
+.pointer:hover {
+    cursor: pointer;
+}
+
+.hide {
+    opacity: 0;
+}
+
+a {
+    color: rgb(28, 148, 196);
+    text-decoration: none;
+}
+
+a:active {
+    color: rgb(253, 143, 0);
+}

@@ -1,0 +1,21 @@
+/*
+Copyright (c) 2014, DLH
+See LICENSE.txt for license info.
+*/
+
+#publish textarea {
+    height: 100%;
+    width: 100%;
+    font-family: Consolas, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
+}
+
+#publish .error-box {
+    padding: 20px;
+    border-radius: 4px;
+    border: 1px solid #fed22f;
+    background-color: #ffe45c;
+}
+
+#publish .error-box .fa {
+    color: #4275ED;
+}

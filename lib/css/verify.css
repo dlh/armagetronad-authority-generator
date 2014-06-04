@@ -1,0 +1,70 @@
+/*
+Copyright (c) 2014, DLH
+See LICENSE.txt for license info.
+*/
+
+#verify table {
+    width: 100%;
+}
+
+#verify th {
+    border-bottom: 1px dotted #69C;
+}
+
+#verify tr {
+    padding-top: 2px;
+    padding-bottom: 2px;
+}
+
+#verify th, #verify td {
+    border-right: 2px solid #69C;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+#verify th:last-child, #verify td:last-child {
+    border-right: none;
+}
+
+/* The Global ID column */
+#verify th:nth-child(2) {
+    text-align: left;
+    width: 100%;
+}
+
+#verify td > .fa {
+    padding: 4px;
+    border-radius: 4px;
+    border: 1px solid transparent;
+}
+
+#verify .validating {
+}
+
+#verify .warning {
+    background-color: rgb(255, 228, 92);
+    border-color: rgb(254, 210, 47);
+}
+
+#verify .invalid {
+    /*padding: 1px;*/
+    color: #ECCA6E;
+    background-color: rgb(184, 25, 0);
+    border-color: rgb(205, 10, 10);
+}
+
+#verify .valid {
+    color: #8FAF6F;
+}
+
+#verify td label:hover {
+    cursor: crosshair;
+}
+
+#verify .debug-button {
+    margin-left: 15px;
+}
+
+#verify table a {
+    margin-left: 20px;
+}

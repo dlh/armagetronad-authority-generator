@@ -1,0 +1,83 @@
+<!--
+Copyright (c) 2014, DLH
+See LICENSE.txt for license info.
+-->
+<section>
+    <div class="fill">
+        <table>
+            <thead>
+                <tr>
+                    <th><i title="The validated status of the Global ID" class="fa fa-info-circle"></i></th>
+                    <th>
+                        Global ID
+                    </th>
+                    <th>User Level</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Placeholder row to maintain column width when there are no players -->
+                <tr v-show="players.length == 0">
+                    <td><i class="fa fa-check hide"></i></td>
+                    <td></td>
+                    <td class="hide"><span v-component="user-level"></span>
+                </tr>
+                <tr v-repeat="players | orderBy 'userLevel'">
+                    <td><i class="{{description}}" title="{{message}}"></i></td>
+                    <td>
+                        <div class="right" v-show="shouldDisplayDebugButtons">
+                            <a href="{{authorityResponse(this)}}" target="_blank">Authority Response</a>
+                            <a href="{{validationResponse(this)}}" target="_blank">Validation Response</a>
+                        </div>
+
+                        <button
+                            class="plain-action left"
+                            v-show="shouldDisplayAllRemoveButtons"
+                            v-on="click: remove(this)"
+                        >
+                            <i class="fa fa-trash-o"></i>
+                        </button>
+                        <div v-show="this == editedPlayer">
+                            <input
+                                type="email"
+                                size="40"
+                                v-model="name"
+                                v-wait-to-focus="this == editedPlayer"
+                                v-on="
+                                    keyup: revertEdit(this) | key esc,
+                                    keyup: completeEdit(this) | key enter
+                                ">
+                                <button class="plain-action" v-on="click: revertEdit(this)">Cancel</button>
+                                <button class="plain-action" v-on="click: completeEdit(this)">Save</button>
+                        </div>
+                        <label v-text="name" v-on="click: edit(this)" v-show="this != editedPlayer"></label>
+                    </td>
+                    <td>
+                        <span
+                            v-component="user-level"
+                            v-with="userLevel: userLevel">
+                        </span>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div>
+        <button
+            class="action"
+            title="Toggle the display of the remove buttons"
+            v-on="click: shouldDisplayAllRemoveButtons = !shouldDisplayAllRemoveButtons"
+        >
+            Toggle <i class="fa fa-trash-o"></i> Buttons
+        </button>
+        <button
+            class="action debug-button"
+            title="Toggle the display of the debug buttons"
+            v-on="click: shouldDisplayDebugButtons = !shouldDisplayDebugButtons"
+        >
+            <i class="fa fa-wrench"></i>
+        </button>
+
+        <button class="right action" v-on="click: moveToNextStep">Scroll to Publish</button>
+    </div>
+</section>

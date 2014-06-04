@@ -1,0 +1,22 @@
+<!--
+Copyright (c) 2014, DLH
+See LICENSE.txt for license info.
+-->
+<section>
+    <div>
+        <p>
+            <input type="text" placeholder="Heading" v-model="heading">
+        </p>
+        <p>
+            <input type="checkbox" class="pointer" id="include-ad" v-model="includeAd"> <label for="include-ad" class="pointer">Include advertisement?</label>
+            <div class="error-box" v-show="numberErrors > 0">
+                <i class="fa fa-exclamation-triangle"></i>
+                There is an issue with {{errorDescription}}. This may exclude some users from obtaining an elevated user level.
+            </div>
+        </p>
+    </div>
+
+    <div class="fill">
+        <textarea readonly placeholder="No GIDs to display!" v-model="configFile"></textarea>
+    </div>
+</section>

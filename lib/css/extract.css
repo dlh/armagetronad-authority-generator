@@ -1,0 +1,13 @@
+/*
+Copyright (c) 2014, DLH
+See LICENSE.txt for license info.
+*/
+
+#extract textarea {
+    height: 100%;
+    width: 100%;
+}
+
+#extract td {
+    padding-right: 5px;
+}

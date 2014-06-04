@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<!--
+Copyright (c) 2014, DLH
+See LICENSE.txt for license info.
+-->
+<html>
+<head>
+    <meta charset="utf-8">
+    <link href="dist/app.css" rel="stylesheet">
+    <title>Armagetron Advanced Authority Generator</title>
+</head>
+<body>
+    <div id="app-view">
+        <section id="extract">
+            <div>
+                <nav v-component="navigation" data-section="0"></nav>
+                <h1>Extract Global IDs</h1>
+                <p>Paste the teams list into the text field. Global IDs will be found and extracted from the text.</p>
+            </div>
+            <div v-component="extract" class="fill"></div>
+        </section>
+
+        <section id="verify">
+            <div>
+                <nav v-component="navigation" data-section="1"></nav>
+                <h1>Verify &amp; Edit</h1>
+                <p>Click a name to edit it.</p>
+            </div>
+            <div v-component="verify" v-with="players: players" class="fill"></div>
+        </section>
+
+        <section id="publish">
+            <div>
+                <nav v-component="navigation" data-section="2"></nav>
+                <h1>Publish</h1>
+            </div>
+            <div
+                class="fill"
+                v-component="publish"
+                v-with="
+                    players: players,
+                    numberErrors: numberErrors
+                "
+            ></div>
+        </section>
+
+        <section id="about">
+            <div>
+                <nav v-component="navigation" data-section="3"></nav>
+                <h1>About</h1>
+            </div>
+            <div class="fill">
+                <p>Created by dlh@forums.</p>
+                <ul>
+                    <li><a href="http://github.com/dlh/armagetronad-authority-generator">Source code</a></li>
+                    <li><a href="http://forums3.armagetronad.net/viewtopic.php?f=55&t=21695">Forums thread</a></li>
+                </ul>
+            </div>
+        </section>
+    </div>
+    <script src="dist/bundle.js"></script>
+</body>
+</html>
