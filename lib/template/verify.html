@@ -20,14 +20,14 @@
                 <tr v-repeat="players | orderBy 'userLevel'">
                     <td><i class="{{description}}" title="{{message}}"></i></td>
                     <td>
-                        <div class="right" v-show="shouldDisplayDebugButtons">
+                        <div class="right" v-show="shouldDisplayDebugLinks">
                             <a href="{{authorityResponse(this)}}" target="_blank">Authority Response</a>
                             <a href="{{validationResponse(this)}}" target="_blank">Validation Response</a>
                         </div>
 
                         <button
                             class="plain-action left"
-                            v-show="shouldDisplayAllRemoveButtons"
+                            v-show="shouldDisplayRemoveButtons"
                             v-on="click: remove(this)"
                         >
                             <i class="fa fa-trash-o"></i>
@@ -60,22 +60,25 @@
 
     <div>
         <p>
-            <button
-                class="action"
-                title="Toggle the display of the remove buttons"
-                v-on="click: shouldDisplayAllRemoveButtons = !shouldDisplayAllRemoveButtons"
+            <input
+                type="checkbox"
+                id="verify-remove-buttons"
+                v-model="shouldDisplayRemoveButtons"
             >
-                Toggle <i class="fa fa-trash-o"></i> Buttons
-            </button>
-            <button
-                class="action debug-button"
-                title="Toggle the display of the debug buttons"
-                v-on="click: shouldDisplayDebugButtons = !shouldDisplayDebugButtons"
-            >
-                <i class="fa fa-wrench"></i>
-            </button>
-
+            <label for="verify-remove-buttons" class="pointer">
+                <i class="fa fa-trash-o"></i> Show remove buttons
+            </label>
+        </p>
+        <p>
             <button class="right action" v-on="click: moveToNextStep">Scroll to Publish</button>
+            <input
+                type="checkbox"
+                id="verify-debug-links"
+                v-model="shouldDisplayDebugLinks"
+            >
+            <label for="verify-debug-links" class="pointer">
+                <i class="fa fa-wrench"></i> Show debug links
+            </label>
         </p>
     </div>
 </section>
