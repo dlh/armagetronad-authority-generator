@@ -89,4 +89,10 @@ describe("GID find", function() {
         deepEqual(gid.findAuthenticatedNames("@a, foo@a)"), ["@a", "foo@a"]);
         deepEqual(gid.findAuthenticatedNames("Blah (@a, foo@a), p1, p2)"), ["@a", "foo@a"]);
     });
+
+    it("wiki code", function() {
+        deepEqual(gid.findAuthenticatedNames("{{ctfTeam|Name|a|a@forums|b}}"), ["a@forums"]);
+        deepEqual(gid.findAuthenticatedNames("{{ctfTeam|Name|a|a@forums, b@forums|b}}"), ["a@forums", "b@forums"]);
+        deepEqual(gid.findAuthenticatedNames("{{ctfTeam|Name|a|a with spaces@forums|b}}"), ["a with spaces@forums"]);
+    });
 });
